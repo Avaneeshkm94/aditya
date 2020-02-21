@@ -1,0 +1,4 @@
+employee_data.list:
+  title: Employees
+  route_name: employee_data.list
+  base_route: system.admin_content

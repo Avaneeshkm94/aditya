@@ -1,0 +1,73 @@
+employee_data.add:
+  path: '/admin/content/employee/add'
+  defaults:
+    _form: '\Drupal\employee_data\Form\EmployeeForm'
+    _title: 'Create Employee'
+  requirements:
+    _permission: 'add employee'
+    
+employee_data.list:
+  path: '/admin/content/employee'
+  defaults:
+    _controller: '\Drupal\employee_data\Controller\EmployeeController::listEmployees'
+    _title: 'Employee Dashboard'
+  requirements:
+    _permission: 'manage employees'
+    
+employee_data.test:
+  path: '/admin/content/employee/test'
+  defaults:
+    _form: '\Drupal\employee_data\Form\EmployeeTableForm'
+    _title: 'Test Employee'
+  requirements:
+    _permission: 'add employee'
+    
+employee_data.view:
+  path: '/admin/content/employee/{employee}/{js}'
+  defaults:
+    _controller: '\Drupal\employee_data\Controller\EmployeeController::viewEmployee'
+    _title: 'View Employee'
+  requirements:
+    _permission: 'view employee'
+    js: 'nojs|ajax'
+  options:
+    parameters:
+      employee:
+        type: employee
+        
+# employee.action:
+#   path: '/admin/content/employee_data/action/{action}'
+#   defaults:
+#     _form: 'Drupal\employee_data\Form\EmployeeBulkActionForm'
+#     _title_callback: 'Drupal\employee_data\Form\EmployeeBulkActionForm::getPageTitle'
+#   requirements:
+#     _permission: 'delete employee'
+        
+employee_data.settings:
+  path: '/admin/config/employee'
+  defaults:
+    _form: '\Drupal\employee_data\Form\EmployeeSettingsForm'
+    _title: 'Employees page settings'
+  requirements:
+    _permission: 'administer site configuration'
+    
+# employee_data.edit:
+#   path: 'admin/content/employee/{employee}/edit'
+#   defaults:
+#     _form: '\Drupal\employee\forms\EmployeeForm'
+#     _title: 'Edit Employee'
+#   requirements:
+#     _permission: 'edit employee'
+#   options:
+#     parameters:
+#       employee:
+#         type: employee
+        
+employee_data.delete:
+  path: '/admin/content/employee/{id}/delete'
+  defaults:
+    _form: 'Drupal\employee_data\Form\EmployeeDeleteForm'
+    _title: 'Delete Employee'
+  requirements:
+    _permission: 'delete employee'
+

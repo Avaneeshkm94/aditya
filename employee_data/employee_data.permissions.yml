@@ -1,0 +1,12 @@
+add employee:
+  title: 'Add Employee'
+  description: 'Create a new employee'
+manage employees:
+  title: 'Manage Employee records'
+  description: 'View, add, edit and delete employee records'
+edit employee:
+  title: 'Edit Employee'
+  description: 'Edit an employee'
+delete employee:
+  title: 'Delete Employee'
+  description: 'Delete an employee'

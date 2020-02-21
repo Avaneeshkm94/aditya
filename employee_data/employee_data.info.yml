@@ -1,0 +1,5 @@
+name: Employee Data
+type: module
+description: Custom Module for Employee Data.
+package: Custom
+core: 8.x

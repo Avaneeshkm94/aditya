@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Contains employee_data.install.
+ */
+
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function employee_data_schema() {
+  $schema['employee'] = [
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'name' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'email' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'department' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+      ],
+      'address' => [
+        'type' => 'text',
+        'not null' => TRUE,
+      ],
+      'state' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'district' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+      ],
+      'status' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'size' => 'tiny',
+        'length' => 1,
+        'default' => 1,
+      ],
+      'profile_pic' => [
+        'type' => 'int',
+        'not null' => FALSE,
+        'length' => 11,
+      ],
+    ],
+    'primary key' => ['id'],
+  ];
+  return $schema;
+}
